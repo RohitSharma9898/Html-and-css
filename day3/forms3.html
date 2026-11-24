@@ -1,0 +1,261 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Forms</title>
+</head>
+
+<body>
+
+    <h1>Advanced HTML Form Elements</h1>
+
+    <form action="#" method="post">
+
+        <!-- 1. MORE INPUT TYPES -->
+        <fieldset>
+            <legend>Different Input Types</legend>
+
+            <!-- Color Picker -->
+            <label for="color">Choose Color:</label>
+            <input type="color" id="color" name="color">
+
+            <br><br>
+
+            <!-- Range Slider -->
+            <label for="volume">Select Volume:</label>
+            <input type="range" id="volume" name="volume"
+                   min="0" max="100" value="50">
+
+            <br><br>
+
+            <!-- Month -->
+            <label for="month">Select Month:</label>
+            <input type="month" id="month" name="month">
+
+            <br><br>
+
+            <!-- Week -->
+            <label for="week">Select Week:</label>
+            <input type="week" id="week" name="week">
+
+            <br><br>
+
+            <!-- Date and Time -->
+            <label for="meeting">Meeting Date and Time:</label>
+            <input type="datetime-local" id="meeting" name="meeting">
+
+            <br><br>
+
+            <!-- URL -->
+            <label for="website">Website:</label>
+            <input type="url" id="website" name="website"
+                   placeholder="https://example.com">
+
+            <br><br>
+
+            <!-- Search -->
+            <label for="search">Search:</label>
+            <input type="search" id="search" name="search">
+
+        </fieldset>
+
+        <br>
+
+        <!-- 2. DATALIST -->
+        <fieldset>
+            <legend>Datalist Example</legend>
+
+            <label for="browser">Choose Browser:</label>
+
+            <input type="text" id="browser" name="browser"
+                   list="browsers">
+
+            <datalist id="browsers">
+                <option value="Google Chrome">
+                <option value="Mozilla Firefox">
+                <option value="Microsoft Edge">
+                <option value="Safari">
+                <option value="Opera">
+            </datalist>
+
+        </fieldset>
+
+        <br>
+
+        <!-- 3. OPTGROUP -->
+        <fieldset>
+            <legend>Optgroup Example</legend>
+
+            <label for="course">Select Course:</label>
+
+            <select id="course" name="course">
+
+                <option value="">Choose Course</option>
+
+                <optgroup label="Programming">
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="cpp">C++</option>
+                </optgroup>
+
+                <optgroup label="Web Development">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                </optgroup>
+
+            </select>
+
+        </fieldset>
+
+        <br>
+
+        <!-- 4. MULTIPLE ATTRIBUTE -->
+        <fieldset>
+            <legend>Multiple Selection</legend>
+
+            <!-- Multiple Dropdown Selection -->
+            <label for="skills">Select Skills:</label>
+
+            <select id="skills" name="skills" multiple size="4">
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+            </select>
+
+            <br><br>
+
+            <!-- Multiple File Upload -->
+            <label for="files">Upload Multiple Files:</label>
+
+            <input type="file" id="files" name="files" multiple>
+
+        </fieldset>
+
+        <br>
+
+        <!-- 5. READONLY AND DISABLED -->
+        <fieldset>
+            <legend>Readonly and Disabled</legend>
+
+            <!-- Readonly Field -->
+            <label for="username">Username:</label>
+
+            <input type="text" id="username"
+                   name="username" value="Rohit" readonly>
+
+            <br><br>
+
+            <!-- Disabled Field -->
+            <label for="city">City:</label>
+
+            <input type="text" id="city"
+                   name="city" value="Vadodara" disabled>
+
+        </fieldset>
+
+        <br>
+
+        <!-- 6. CHECKED AND SELECTED -->
+        <fieldset>
+            <legend>Default Selected Values</legend>
+
+            <!-- Checked Checkbox -->
+            <input type="checkbox" id="html"
+                   name="subject" value="HTML" checked>
+
+            <label for="html">HTML</label>
+
+            <br>
+
+            <!-- Checked Radio Button -->
+            <input type="radio" id="male"
+                   name="gender" value="Male" checked>
+
+            <label for="male">Male</label>
+
+            <input type="radio" id="female"
+                   name="gender" value="Female">
+
+            <label for="female">Female</label>
+
+            <br><br>
+
+            <!-- Selected Dropdown Option -->
+            <label for="citylist">Choose City:</label>
+
+            <select id="citylist" name="citylist">
+                <option value="delhi">Delhi</option>
+                <option value="mumbai" selected>Mumbai</option>
+                <option value="jaipur">Jaipur</option>
+            </select>
+
+        </fieldset>
+
+        <br>
+
+        <!-- 7. STEP ATTRIBUTE -->
+        <fieldset>
+            <legend>Step Attribute</legend>
+
+            <label for="price">Enter Price:</label>
+
+            <input type="number" id="price"
+                   name="price" min="0" max="100"
+                   step="5" value="10">
+
+        </fieldset>
+
+        <br>
+
+        <!-- 8. BUTTON TYPES -->
+        <fieldset>
+            <legend>Button Examples</legend>
+
+            <button type="submit">Submit Form</button>
+
+            <button type="reset">Reset Form</button>
+
+            <button type="button">Normal Button</button>
+
+        </fieldset>
+
+    </form>
+
+    <br>
+
+    <!-- 9. NOVALIDATE EXAMPLE -->
+    <h2>Disable Browser Validation</h2>
+
+    <form action="#" method="get" novalidate>
+
+        <label for="email">Email:</label>
+
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Submit Without Validation</button>
+
+    </form>
+
+    <!-- 10. ENCTYPE EXAMPLE -->
+    <h2>File Upload Form</h2>
+
+    <form action="/upload" method="post"
+          enctype="multipart/form-data">
+
+        <label for="document">Upload Document:</label>
+
+        <input type="file" id="document" name="document">
+
+        <button type="submit">Upload File</button>
+
+    </form>
+
+</body>
+</html>
+```
